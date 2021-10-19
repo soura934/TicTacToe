@@ -6,6 +6,8 @@ public class InputValidation implements IInputValidation {
          if (inputPos[i] >= gridSize || inputPos[i] < 0) {
              System.out.println("Invalid input");
              return false;
+         } else if (inputPos.length != 2) {
+             return false;
          }
      }
 
