@@ -3,14 +3,15 @@ package com.saggezza.tictactoe;
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
-public class Player1Test {
+public class Player2Test {
 
     @Test
     public void inputValidationOnce() {
         //Given: it is player 1 turn
         // And: grid size is 3
-        // And: player 1 enter [2, 0]
+        // And: player 2 enter [2, 0]
         int[] pos = {2, 0};
         String[][] grid =  {
                 {"-","-","-"},
@@ -24,8 +25,8 @@ public class Player1Test {
         when(emptyPos.isEmpty(pos,grid)).thenReturn(true);
 
         //When: I need to validate the input
-        IPlayer1 player1 = new Player1(inputValidation, emptyPos);
-        player1.mark(pos, grid);
+        IPlayer2 player2 = new Player2(inputValidation, emptyPos);
+        player2.mark(pos, grid);
 
         //Then: I call input validation once
         verify(inputValidation, times(1)).validate(pos, 3);
@@ -35,7 +36,7 @@ public class Player1Test {
     public void isEmptyOnce() {
         //Given: it is player 1 turn
         // And: grid size is 3
-        // And: player 1 enter [2, 0]
+        // And: player 2 enter [2, 0]
         int[] pos = {2, 0};
         String[][] grid =  {
                 {"-","-","-"},
@@ -49,8 +50,8 @@ public class Player1Test {
         when(emptyPos.isEmpty(pos,grid)).thenReturn(true);
 
         //When: I need to validate the input
-        IPlayer1 player1 = new Player1(inputValidation, emptyPos);
-        player1.mark(pos, grid);
+        IPlayer2 player2 = new Player2(inputValidation, emptyPos);
+        player2.mark(pos, grid);
 
         //Then: I call is empty once
         verify(emptyPos, times(1)).isEmpty(pos, grid);
